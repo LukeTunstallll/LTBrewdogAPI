@@ -1,0 +1,15 @@
+.Card {
+  display: flex;
+  height: 500px;
+  width: 500px;
+}
+
+.Card img {
+  height: 500px;
+  width: 250px;
+}
+
+.BeerDesc {
+  display: flex;
+  flex-direction: column;
+}
