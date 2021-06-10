@@ -1,10 +1,12 @@
 import React from "react";
+import SearchBar from "../SearchBar/SearchBar";
 import styles from "./NavBar.module.scss";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const { updateSearchText } = props;
   return (
     <div className={`${styles.NavBar}`}>
-      <p>NavBar works</p>
+      <SearchBar updateSearchText={updateSearchText} />
     </div>
   );
 };
