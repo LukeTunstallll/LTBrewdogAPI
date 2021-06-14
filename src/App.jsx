@@ -14,17 +14,16 @@ const App = () => {
     if (beers === null) {
       return [];
     }
+    setBeers(beers);
+    return beers;
+  };
 
-    // return beers.map((beer) => {
-    //   const ingredients = [];
-    //   for (let key in beer) {
-    //     if (key.includes("name") && beer[key]) {
-    //       ingredients.push(beer[key]);
-    //     }
-    //   }
-    // });
-    console.log(beers);
-    return beers[0];
+  const getBeercard = (beer) => {
+    return (
+      <div>
+        <Card beers={beer} />
+      </div>
+    );
   };
 
   const updateBeers = async (searchTerm) => {
@@ -35,7 +34,7 @@ const App = () => {
   return (
     <div className="App">
       <NavBar updateSearchText={updateBeers} />
-      <Card beers={beers} />
+      {beers.map(getBeercard)}
     </div>
   );
 };

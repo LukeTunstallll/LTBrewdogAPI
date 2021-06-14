@@ -8,7 +8,7 @@ const Card = (props) => {
       <img src={image_url} alt={name}></img>
       <div className={`${styles.BeerDesc}`}>
         <h3>{name}</h3>
-        <p>{abv}</p>
+        <p>{abv}% abv</p>
         <p>{tagline}</p>
         <button>More Info</button>
       </div>
