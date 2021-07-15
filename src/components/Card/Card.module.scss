@@ -1,21 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap");
+
+$font-main: "Carrois Gothic SC", sans-serif;
+
 .Card {
   display: flex;
   height: 300px;
   width: 300px;
   border: 5px solid lightseagreen;
-}
-
-.Card img {
-  height: 300px;
-  width: 150px;
-  background-color: lightslategray;
+  border-radius: 10px;
+  font-family: $font-main;
+  & img {
+    height: 290px;
+    width: 150px;
+    background-color: lightslategray;
+  }
+  & button {
+    background-color: lightseagreen;
+    border-color: white;
+    color: white;
+    border-radius: 3px;
+  }
 }
 
 .BeerDesc {
   display: flex;
   flex-direction: column;
   width: 150px;
-  height: 300px;
+  height: 290px;
   background-color: lightslategray;
   color: white;
 }

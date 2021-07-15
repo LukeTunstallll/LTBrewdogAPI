@@ -1,5 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap");
+
+$font-main: "Carrois Gothic SC", sans-serif;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: $font-main;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 5px;
+  width: 915px;
 }
