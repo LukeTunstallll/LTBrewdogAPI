@@ -7,23 +7,22 @@ import "./App.css";
 const App = () => {
   const [beers, setBeers] = useState([]);
   const getBeers = async (searchTerm) => {
-    const api_URL = `https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`;
-    const response = await fetch(api_URL);
-    const beers = await response.json();
+    if (searchTerm !== null) {
+      const response = await fetch(
+        `https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`
+      );
+      const beers = await response.json();
 
-    if (beers === null) {
-      return [];
+      if (beers === null) {
+        return [];
+      }
+      setBeers(beers);
+      return beers;
     }
-    setBeers(beers);
-    return beers;
   };
 
   const getBeercard = (beer) => {
-    return (
-      <div>
-        <Card beers={beer} />
-      </div>
-    );
+    return <Card beers={beer} />;
   };
 
   const updateBeers = async (searchTerm) => {
@@ -34,7 +33,7 @@ const App = () => {
   return (
     <div className="App">
       <NavBar updateSearchText={updateBeers} />
-      {beers.map(getBeercard)}
+      <div className={styles.container}>{beers.map(getBeercard)}</div>
     </div>
   );
 };
